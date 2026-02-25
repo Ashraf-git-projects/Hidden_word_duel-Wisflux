@@ -1,18 +1,26 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { io } from "socket.io-client";
 
 function App() {
+  const socketRef = useRef(null);
+
   useEffect(() => {
-    const socket = io("http://localhost:5000");
+    socketRef.current = io("http://localhost:5000");
 
-    socket.emit("joinLobby", { username: "Player_" + Math.floor(Math.random() * 1000) });
+    socketRef.current.emit("joinLobby", {
+      username: "Player_" + Math.floor(Math.random() * 1000),
+    });
 
-    socket.on("matchFound", (data) => {
+    socketRef.current.on("matchFound", (data) => {
       console.log("Match Found:", data);
     });
 
+    socketRef.current.on("startRound", (data) => {
+      console.log("Round Started:", data);
+    });
+
     return () => {
-      socket.disconnect();
+      socketRef.current.disconnect();
     };
   }, []);
 
