@@ -3,8 +3,6 @@ const {
   createGameState,
   createRoundState,
   startTickEngine,
-  handleMatchProgression,
-  endRound,
 } = require("../gameEngine/gameStore");
 
 const {
