@@ -139,6 +139,8 @@ Visit `http://localhost:5173` in two different browser tabs to matchmake against
 ---
 *Created as a real-time game assignment project! Happy dueling!* ⚔️
 
-Thank you
+Thank you!
+
 Ashraf Hussain Siddiqui
+
 ashrafhussain2265@gmail.com
