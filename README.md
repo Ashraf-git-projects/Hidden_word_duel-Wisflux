@@ -43,6 +43,7 @@ This project was engineered to be highly reactive and fully modular:
 
 ---
 ## 📂 Folder Structure
+```text
 hidden-word-duel/
 │
 ├── client/                     # Frontend Application (React + Vite)
