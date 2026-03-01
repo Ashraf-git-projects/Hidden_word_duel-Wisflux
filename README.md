@@ -42,6 +42,46 @@ This project was engineered to be highly reactive and fully modular:
     *   **MongoDB (Mongoose)** for non-relational database storage of players, match history, round data, and guess ledgers.
 
 ---
+## 📂 Folder Structure
+hidden-word-duel/
+│
+├── client/                     # Frontend Application (React + Vite)
+│   ├── src/                    
+│   │   ├── components/         # Reusable React UI Components
+│   │   │   ├── GameBoard.jsx   # Main game interface and tick progress bar
+│   │   │   ├── Lobby.jsx       # Matchmaking queue screen
+│   │   │   ├── Login.jsx       # Initial username entry screen
+│   │   │   └── MatchEnd.jsx    # Post-match summary and stats
+│   │   ├── App.jsx             # Global state machine & Socket.io listeners
+│   │   ├── index.css           # Tailwind base styles and setup
+│   │   └── main.jsx            # React root injection
+│   ├── .env                    # Client environment variables (VITE_BACKEND_URL)
+│   ├── index.html              # Vite HTML entry point
+│   ├── package.json            # Client dependencies and build scripts
+│   ├── tailwind.config.js      # Tailwind CSS customized themes and settings
+│   └── vite.config.js          # Vite build configurations
+│
+├── server/                     # Backend Application (Node.js + Express)
+│   ├── src/                    
+│   │   ├── config/             
+│   │   │   └── db.js           # Mongoose MongoDB connection setup
+│   │   ├── gameEngine/         # Core game logic
+│   │   │   ├── gameStore.js    # Tick cycle logic, room state, win/draw evaluations
+│   │   │   └── wordSelector.js # Dictionary and random word generator
+│   │   ├── models/             # Mongoose Database Schemas
+│   │   │   ├── Guess.js        # Stores individual guess attempts
+│   │   │   ├── Match.js        # Stores match metadata and final scores
+│   │   │   ├── Player.js       # Stores persistent player accounts
+│   │   │   └── Round.js        # Stores individual round winners and the secret word
+│   │   ├── sockets/            
+│   │   │   └── socketHandler.js # WebSocket event listeners (joinLobby, submitGuess)
+│   │   ├── app.js              # Express app routing and middleware
+│   │   └── index.js            # Node HTTP server and Socket.io initialization
+│   ├── .env                    # Server environment variables (MONGO_URI, PORT)
+│   └── package.json            # Server dependencies and start scripts
+│
+├── .gitignore                  
+└── README.md                   # Project documentation
 
 ## 🚨 Edge-Cases Handled Beautifully
 
@@ -97,4 +137,8 @@ npm run dev
 Visit `http://localhost:5173` in two different browser tabs to matchmake against yourself!
 
 ---
-*Created as a MERN real-time networking assignment! Happy dueling!* ⚔️
+*Created as a real-time game assignment project! Happy dueling!* ⚔️
+
+Thank you
+Ashraf Hussain Siddiqui
+ashrafhussain2265@gmail.com
